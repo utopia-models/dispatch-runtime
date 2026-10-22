@@ -1,0 +1,5 @@
+[Unit]
+Description=Heal the board's native Status field from local current_issue (#179, SDA reconciler — board visibility)
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash %h/.claude/ops/reconcile-board-status.sh --apply

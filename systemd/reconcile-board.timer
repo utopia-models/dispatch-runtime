@@ -1,0 +1,7 @@
+[Unit]
+Description=Run the board-status reconciler every 5min (keeps bravo visible on the board — #179)
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+[Install]
+WantedBy=timers.target
