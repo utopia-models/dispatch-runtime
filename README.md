@@ -23,7 +23,7 @@ two launches 11 s, 5 s and 5 s apart, and every guard passed both times.
 
 The first fix made the unit name zero-entropy: the run for issue 7124 is always `task-7124.service`, and
 `systemd-run` refuses a second unit with a name that is already loaded. That closes the race for one
-master, in the kernel, with no window.
+master, in that user's systemd manager, with no window.
 
 It does not close it across masters. Each master is a different unix user, and `systemctl --user` talks
 to that user's own systemd user manager. Unit names are scoped per manager, so `task-7124.service` under
