@@ -2,10 +2,10 @@
 
 The dispatch layer of a small agent fleet: four Claude Code "masters" (separate unix users on one Linux
 host) take work from a GitHub Projects board. A sweeper picks eligible issues, `dispatch.sh` launches one
-`systemd --user` transient unit per issue, and `task-runner.sh` runs the agent to a merged PR and reports
-the outcome back on the issue. Nothing is resident between runs.
+`systemd --user` transient unit per issue, and `task-runner.sh` runs the agent on the issue to completion and
+reports the outcome back on the issue. Nothing is resident between runs.
 
-Author: Tyler Youk ([tyleryouk.com](https://tyleryouk.com), [docs.utopiamodels.ai](https://docs.utopiamodels.ai)).
+Author: Tyler Youk ([tyleryouk.com](https://tyleryouk.com)).
 
 This is an extraction from a private repository, published to be read. It is not a package: the scripts
 expect the fleet's board, its GitHub App and its host layout, and they will not run unchanged anywhere
